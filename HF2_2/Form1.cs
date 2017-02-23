@@ -19,13 +19,13 @@ namespace HF2_2
             InitializeComponent();
         }
 
-        Bitmap buffer;
-        Graphics bufferg;
+        public Bitmap buffer;
+       public Graphics bufferg;
 
 
         Thread t;
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             button1.Enabled = false;
 
@@ -41,7 +41,7 @@ namespace HF2_2
 
             lock (buffer)
             {
-                h = buffer.Height;
+               h = buffer.Height;
                 w = buffer.Width;
             }
 
@@ -55,19 +55,19 @@ namespace HF2_2
         }
         
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        public void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+       public void Form1_Load(object sender, EventArgs e)
         {
             buffer = new Bitmap(panel2.Width, panel2.Height);
             lock (buffer)
                 bufferg = Graphics.FromImage(buffer);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        public void timer1_Tick(object sender, EventArgs e)
         {
             if (buffer == null)
                 return;
@@ -85,8 +85,10 @@ namespace HF2_2
         }
 
 
-        private void panel2_MouseClick(object sender, MouseEventArgs e)
+        public void panel2_MouseClick(object sender, MouseEventArgs e)
         {
+            //public int szam = e.Y * Buffer.width + e.X;
+
             Form2 f2 = new Form2 (String.Format("X={0}; Y={1}", e.X, e.Y));
             f2.ShowDialog(this);
         }

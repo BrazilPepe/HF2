@@ -35,6 +35,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.AcceptsReturn = true;
             this.textBox1.BackColor = System.Drawing.Color.Red;
             this.textBox1.Location = new System.Drawing.Point(12, 150);
             this.textBox1.Name = "textBox1";
@@ -63,6 +64,7 @@
             this.textBox3.Size = new System.Drawing.Size(260, 20);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = "A szám amire kattintottál:\r\n\r\n";
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // Form2
             // 
