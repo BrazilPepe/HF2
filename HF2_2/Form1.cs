@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
+
 namespace HF2_2
 {
     public partial class Form1 : Form
@@ -46,7 +47,7 @@ namespace HF2_2
 
             for (int y = 0; y < h; y++)
                 for (int x = 0; x < w; x++)
-                    if ((y * w + x) % 8 == 1)
+                    if (PrimeSearcher.Prime(y * w + x)==true)
                         lock (buffer)
                             buffer.SetPixel(x, y, Color.Black);
 
@@ -75,6 +76,11 @@ namespace HF2_2
                 lock (buffer)
                     g.DrawImage(buffer, 0, 0);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
