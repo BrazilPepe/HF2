@@ -47,7 +47,7 @@ namespace HF2_2
 
             for (int y = 0; y < h; y++)
                 for (int x = 0; x < w; x++)
-                    if (PrimeSearcher.Prime(y * w + x)==true)
+                    if (PS.Prime(y * w + x)==true)
                         lock (buffer)
                             buffer.SetPixel(x, y, Color.Black);
 
