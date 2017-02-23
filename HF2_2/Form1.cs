@@ -46,12 +46,14 @@ namespace HF2_2
 
             for (int y = 0; y < h; y++)
                 for (int x = 0; x < w; x++)
-                    if ((y * w + x) % 8 == 1)
-                        lock (buffer)
+                    if ((y * w + x) % 16 == 1)
+                       
+                                            lock (buffer)
                             buffer.SetPixel(x, y, Color.Black);
 
             this.Invoke(new Action(() => { button1.Enabled = true; }));
         }
+        
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -75,6 +77,23 @@ namespace HF2_2
                 lock (buffer)
                     g.DrawImage(buffer, 0, 0);
             }
+        }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+
+        private void panel2_MouseClick(object sender, MouseEventArgs e)
+        {
+            Form2 f2 = new Form2 (String.Format("X={0}; Y={1}", e.X, e.Y));
+            f2.ShowDialog(this);
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
