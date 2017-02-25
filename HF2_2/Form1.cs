@@ -57,6 +57,7 @@ namespace HF2_2
 
         public void panel2_Paint(object sender, PaintEventArgs e)
         {
+             
 
         }
 

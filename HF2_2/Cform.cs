@@ -16,5 +16,10 @@ namespace HF2_2
         {
             InitializeComponent();
         }
+
+        public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
